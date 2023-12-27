@@ -1,5 +1,10 @@
 ### Hi there 👋
 
+•😄 I'm Mouad
+•🔭 I'm Interested in machine learning
+•🌱 I'm currently learning generative ai
+
+
 <!--
 **mouadenna/mouadenna** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
 
