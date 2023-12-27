@@ -1,8 +1,8 @@
 ### Hi there 👋
-</br>
-•😄 I'm Mouad</br>
-•🔭 I'm Interested in machine learning</br>
-•🌱 I'm currently learning generative ai
+
+####•😄 I'm Mouad
+####•🔭 I'm Interested in machine learning
+####•🌱 I'm currently learning generative ai
 
 
 <!--
