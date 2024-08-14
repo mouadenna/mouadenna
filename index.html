@@ -14,7 +14,7 @@
             --text-color: #e0e0e0;
             --bg-color: #0a0a2a;
             --card-bg: #1a1a4a;
-        }
+        }   
 
         body {
             font-family: 'Roboto', sans-serif;
@@ -98,6 +98,9 @@
             top: 0;
             left: 0;
             z-index: 1;
+        }
+        #hide_sec {
+            display: none;
         }
 
         .content {
@@ -281,7 +284,7 @@ header {
     <header>
         <div id="particles-js"></div>
         <div class="content">
-            <h1>Mouad Ennasiry</h1>
+            <h1 >Mouad Ennasiry</h1>
             <p id="typing-text">A Data Science Student's Journey: Learning AI, Machine Learning, and More</p>
         </div>
     </header>
@@ -291,7 +294,7 @@ header {
             <h2>About Me</h2>
             <p>I am a passionate data science student with a focus on Machine Learning, Deep Learning, and algorithmic modeling. Eager to apply optimization techniques and data analysis skills to real-world transportation challenges. Enthusiastic about continuous learning and growth, particularly in developing efficient algorithms for complex systems.</p>
         </section>
-
+        <section id="hide_sec"></section>
         <section id="skills">
             <h2>Skills</h2>
             <div class="timeline">
@@ -311,7 +314,7 @@ header {
                 </div>
             </div>
         </section>
-
+        <section id="hide_sec"></section>
         <section id="experience">
             <h2>Experience</h2>
             <div class="timeline">
@@ -320,33 +323,31 @@ header {
                     <p>Green Energy Park, Rabat, Morocco</p>
                     <ul>
                         <li>Applied machine learning and computer vision techniques to Geographic Information Systems (GIS).</li>
-                        <li>Developed a state-of-the-art segmentation model for photovoltaic satellite imagery, outperforming existing models.</li>
-                        <li>Implemented optimization techniques to improve model performance and efficiency.</li>
-                        <li>Utilized PyTorch for developing, training, and fine-tuning deep learning models.</li>
-                        <li>Conducted extensive data preprocessing and augmentation to enhance model robustness.</li>
                     </ul>
                 </div>
             </div>
         </section>
-
+        
+        <section id="hide_sec"></section>
         <section id="education">
             <h2>Education</h2>
             <div class="timeline">
                 <div class="timeline-item">
-                    <h3>2023--Present: Master of Engineering in Data Science</h3>
-                    <p>School of Information Sciences - ESI, Rabat, Morocco</p>
-                </div>
-                <div class="timeline-item">
-                    <h3>2021--2023: Math-Physics</h3>
-                    <p>CPGE OMAR IBN AL KHATAB, Meknes, Morocco</p>
-                </div>
-                <div class="timeline-item">
                     <h3>2021: Bac in Mathematical Sciences, option B</h3>
                     <p>Fes, Morocco</p>
                 </div>
+                <div class="timeline-item">
+                    <h3>2021-2023: Math-Physics</h3>
+                    <p>CPGE OMAR IBN AL KHATAB, Meknes, Morocco</p>
+                </div>
+                
+                <div class="timeline-item">
+                    <h3>2023 - Present: Master of Engineering in Data Science</h3>
+                    <p>School of Information Sciences - ESI, Rabat, Morocco</p>
+                </div>
             </div>
         </section>
-
+        <section id="hide_sec"></section>
         <section id="projects">
             <h2>Projects</h2>
             <div class="projects">
@@ -365,7 +366,7 @@ header {
                     <p>Personal Project</p>
                     <ul>
                         <li>Developed a robust symptom checker using a random forest model and a chatbot powered by a fine-tuned language model (LoRa).</li>
-                        <li>Implemented optimization algorithms to improve response time and accuracy.</li>
+                        <li>Integrated the chatbot with the symptom checker to provide real-time health advice.</li>
                     </ul>
                 </div>
                 <div class="project">
@@ -380,14 +381,14 @@ header {
                 <div class="project">
                     <h3>Recognition of Handwritten with Neural Networks from Scratch (2023)</h3>
                     <ul>
-                        <li>Developed a segmentation model for photovoltaic satellite imagery to outperform existing models.</li>
-                        <li>Benchmarked various computer vision models (Mask2Former, SegFormer, etc.) and backbones.</li>
-                        <li>Utilized PyTorch for model development and training.</li>
+                        <li>Developed a neural network from scratch to recognize handwritten digits.</li>
+                        <li>Implemented backpropagation and gradient descent algorithms.</li>
+                        <li>Utilized the MNIST dataset for training and testing the model.</li>
                     </ul>
                 </div>
             </div>
         </section>
-
+        <section id="hide_sec"></section>
         <section id="certifications">
             <h2>Certifications</h2>
             <div class="timeline">
@@ -403,15 +404,19 @@ header {
                 </div>
             </div>
         </section>
-
+        <section id="hide_sec"></section>
         <section id="honors">
             <h2>Honors and Awards</h2>
+            <div class="timeline">
+                <div class="timeline-item">
             <ul>
                 <li>2nd place: MDFDS Hackathon organized by the Code Club of ESI</li>
                 <li>3rd place: EAIC Data Competition</li>
                 <li>Participant: Think AI's 2nd edition, selected among 25 teams from over 400 applicants</li>
                 <li>Kaggle Expert</li>
             </ul>
+                </div>
+            </div>
         </section>
     </main>
 
