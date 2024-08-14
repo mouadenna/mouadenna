@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mouad Ennasiry - Space Portfolio</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+    <link rel="icon" href="path-to-your-favicon.ico" type="image/x-icon">
+    <style>
+        :root {
+            --primary-color: #00ffff;
+            --secondary-color: #ff00ff;
+            --text-color: #e0e0e0;
+            --bg-color: #0a0a2a;
+            --card-bg: #1a1a4a;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            height: 60vh; /* Full viewport height */
+            background: linear-gradient(135deg, rgba(0, 255, 255, 0.3), rgba(255, 0, 255, 0.3));
+            color: #fff;
+            text-align: center;
+            padding: 200px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, rgba(10, 10, 42, 0) 0%, rgba(10, 10, 42, 1) 100%);
+            z-index: 2;
+            pointer-events: none;
+        }
+
+        header h1 {
+            font-size: 3.5rem;
+            margin: 0;
+            text-shadow: 0 0 10px rgba(0, 255, 255, 0.8), 0 0 20px rgba(255, 0, 255, 0.8);
+            animation: fadeInDown 1.5s ease-out;
+            z-index: 3;
+            position: relative;
+        }
+
+        header p {
+            font-size: 1.5rem;
+            margin-top: 20px;
+            animation: fadeIn 2s ease-out;
+            z-index: 3;
+            position: relative;
+        }
+
+        @keyframes fadeInDown {
+            0% {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+        #particles-js {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1;
+        }
+
+        .content {
+            position: relative;
+            z-index: 3;
+        }
+
+        section {
+            padding: 60px 0;
+            position: relative;
+        }
+
+        section:nth-child(even) {
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        h2 {
+            color: var(--primary-color);
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 40px;
+            animation: fadeInUp 1.5s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .timeline,
+        .courses,
+        .projects {
+            display: grid;
+            gap: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        }
+
+        .timeline-item,
+        .course,
+        .project {
+            background: rgba(26, 26, 74, 0.8);
+            border: 1px solid var(--primary-color);
+            box-shadow: 0 0 10px var(--primary-color);
+            color: var(--text-color);
+            padding: 20px;
+            border-radius: 8px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .timeline-item:hover,
+        .course:hover,
+        .project:hover {
+            background: rgba(0, 255, 255, 0.2);
+            transform: translateY(-5px);
+        }
+
+        .timeline-item h3,
+        .course h3,
+        .project h3 {
+            color: var(--primary-color);
+            margin-top: 0;
+        }
+
+        footer {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: var(--bg-color);
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 60px;
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 0.9rem;
+        }
+
+        .scroll-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: var(--primary-color);
+            color: var(--bg-color);
+            padding: 10px 15px;
+            border-radius: 50%;
+            cursor: pointer;
+            box-shadow: 0 0 10px var(--primary-color);
+            transition: background 0.3s ease;
+            display: none;
+        }
+
+        .scroll-top:hover {
+            background: var(--secondary-color);
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2.5rem;
+            }
+
+            header p {
+                font-size: 1.2rem;
+            }
+        }
+
+        #typing-text {
+            display: inline;
+            white-space: nowrap;
+            overflow: hidden;
+            border-right: .15em solid orange;
+            font-family: monospace;
+            font-size: 1.5em;
+            animation: typing 4s steps(30, end) 1s forwards, blink-caret .75s step-end infinite;
+        }
+
+        @keyframes typing {
+            from {
+                width: 0;
+            }
+
+            to {
+                width: 100%;
+            }
+        }
+
+        @keyframes blink-caret {
+            from,
+            to {
+                border-color: transparent;
+            }
+
+            50% {
+                border-color: orange;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div id="particles-js"></div>
+        <div class="content">
+            <h1>Mouad Ennasiry</h1>
+            <p id="typing-text">A Data Science Student's Journey: Learning AI, Machine Learning, and More</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <section id="about">
+            <h2>About Me</h2>
+            <p>I am a passionate data science student with a focus on Machine Learning, Deep Learning, and algorithmic modeling. Eager to apply optimization techniques and data analysis skills to real-world transportation challenges. Enthusiastic about continuous learning and growth, particularly in developing efficient algorithms for complex systems.</p>
+        </section>
+
+        <section id="skills">
+            <h2>Skills</h2>
+            <div class="skills">
+                <h3>Technical Skills</h3>
+                <ul>
+                    <li>Languages: Python, SQL, R, C/C++</li>
+                    <li>Technologies: Algorithmic Modeling, Data Analysis, Optimization Techniques, Predictive Modeling, Deep Learning, NLP</li>
+                    <li>Tools: PyTorch, Open-CV, Scikit-learn, Pandas, Matplotlib, Seaborn</li>
+                    <li>MLOps Tools: Wandb, MLFlow</li>
+                    <li>Web Frameworks: FastAPI, Flask</li>
+                </ul>
+                <h3>Personal Skills</h3>
+                <ul>
+                    <li>Analytical thinking, Problem-solving, Innovation, Teamwork, Strong communication</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="experience">
+            <h2>Experience</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <h3>2023/07--Present: Machine Learning and Computer Vision Intern</h3>
+                    <p>Green Energy Park, Rabat, Morocco</p>
+                    <ul>
+                        <li>Applied machine learning and computer vision techniques to Geographic Information Systems (GIS).</li>
+                        <li>Developed a state-of-the-art segmentation model for photovoltaic satellite imagery, outperforming existing models.</li>
+                        <li>Implemented optimization techniques to improve model performance and efficiency.</li>
+                        <li>Utilized PyTorch for developing, training, and fine-tuning deep learning models.</li>
+                        <li>Conducted extensive data preprocessing and augmentation to enhance model robustness.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="education">
+            <h2>Education</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <h3>2023--Present: Master of Engineering in Data Science</h3>
+                    <p>School of Information Sciences - ESI, Rabat, Morocco</p>
+                </div>
+                <div class="timeline-item">
+                    <h3>2021--2023: Math-Physics</h3>
+                    <p>CPGE OMAR IBN AL KHATAB, Meknes, Morocco</p>
+                </div>
+                <div class="timeline-item">
+                    <h3>2021: Bac in Mathematical Sciences, option B</h3>
+                    <p>Fes, Morocco</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects">
+            <h2>Projects</h2>
+            <div class="projects">
+                <div class="project">
+                    <h3>MO3ALIMI (2024)</h3>
+                    <p>Hackathon</p>
+                    <ul>
+                        <li>Designed a platform to help illiterate adults learn the basics of literacy.</li>
+                        <li>Used the Hugging Face Transformers library to develop key components.</li>
+                        <li>Developed a CNN model with PyTorch to identify written letters.</li>
+                        <li>Fine-tuned LLM for course and quiz generation.</li>
+                    </ul>
+                </div>
+                <div class="project">
+                    <h3>Health Companion with Symptom Checker and Chatbot (2024)</h3>
+                    <p>Personal Project</p>
+                    <ul>
+                        <li>Developed a robust symptom checker using a random forest model and a chatbot powered by a fine-tuned language model (LoRa).</li>
+                        <li>Implemented optimization algorithms to improve response time and accuracy.</li>
+                    </ul>
+                </div>
+                <div class="project">
+                    <h3>Chess Vision Connect (2024)</h3>
+                    <p>Personal Project</p>
+                    <ul>
+                        <li>Implemented real-time analysis of chess games using Computer Vision and deep learning.</li>
+                        <li>Integrated YOLOv8 for piece detection and Stockfish for move evaluation.</li>
+                        <li>Personally annotated the dataset to ensure high-quality training data.</li>
+                    </ul>
+                </div>
+                <div class="project">
+                    <h3>Recognition of Handwritten with Neural Networks from Scratch (2023)</h3>
+                    <ul>
+                        <li>Developed a segmentation model for photovoltaic satellite imagery to outperform existing models.</li>
+                        <li>Benchmarked various computer vision models (Mask2Former, SegFormer, etc.) and backbones.</li>
+                        <li>Utilized PyTorch for model development and training.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="certifications">
+            <h2>Certifications</h2>
+            <ul>
+                <li><a href="https://www.coursera.org/account/accomplishments/specialization/UT5YM9E6SH74">Machine Learning Specialization - DeepLearning.AI</a></li>
+                <li><a href="https://coursera.org/share/09b2e482371fc07e722822d830f2411e">Natural Language Processing Specialization - DeepLearning.AI</a></li>
+                <li><a href="https://coursera.org/share/70f6ae6e161b35932187c21db2ad0cc9">Generative AI with Large Language Models - DeepLearning.AI</a></li>
+                <li><a href="https://coursera.org/verify/7YZCC84NMX9Y">Data Analysis with R Programming - Google</a></li>
+                <li><a href="https://coursera.org/share/894415402b903faacca3b238f4bb3aa9">Deep Neural Networks with PyTorch - IBM</a></li>
+                <li><a href="https://www.udemy.com/certificate/UC-08c1dcb6-0d1d-4b2e-ada0-856aaa25d37e/">Data Science & Machine Learning</a></li>
+            </ul>
+        </section>
+
+        <section id="honors">
+            <h2>Honors and Awards</h2>
+            <ul>
+                <li>2nd place: MDFDS Hackathon organized by the Code Club of ESI</li>
+                <li>3rd place: EAIC Data Competition</li>
+                <li>Participant: Think AI's 2nd edition, selected among 25 teams from over 400 applicants</li>
+                <li>Kaggle Expert</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 Your Name. All rights reserved. Exploring the digital universe one line of code at a time.</p>
+    </footer>
+
+    <div class="scroll-top" id="scrollTopBtn">&uarr;</div>
+
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script>
+        particlesJS('particles-js', {
+            particles: {
+                number: { value: 100, density: { enable: true, value_area: 800 } },
+                color: { value: ['#00ffff', '#ff00ff', '#ffffff'] },
+                shape: { type: 'circle' },
+                opacity: { value: 0.7, random: true },
+                size: { value: 3, random: true },
+                move: { enable: true, speed: 2, direction: 'none', random: true, out_mode: 'out' }
+            },
+            interactivity: {
+                detect_on: 'canvas',
+                events: { onhover: { enable: true, mode: 'grab' }, onclick: { enable: true, mode: 'push' } },
+                modes: { grab: { distance: 140, line_linked: { opacity: 1 } }, push: { particles_nb: 4 } }
+            }
+        });
+
+        // Smooth Scroll for internal links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+
+        // Scroll to Top Button
+        const scrollTopBtn = document.getElementById('scrollTopBtn');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                scrollTopBtn.style.display = 'block';
+            } else {
+                scrollTopBtn.style.display = 'none';
+            }
+        });
+
+        scrollTopBtn.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // Typing Effect
+        document.addEventListener("DOMContentLoaded", function () {
+            const typingText = document.getElementById('typing-text');
+            const text = typingText.textContent;
+            typingText.textContent = '';
+
+            let index = 0;
+            function type() {
+                if (index < text.length) {
+                    typingText.textContent += text.charAt(index);
+                    index++;
+                    setTimeout(type, 50); // Adjust typing speed here
+                }
+            }
+            type();
+        });
+    </script>
+</body>
+
+</html>
