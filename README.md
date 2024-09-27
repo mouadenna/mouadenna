@@ -3,7 +3,7 @@
 •😄 I'm Mouad<br>
 •🔭 I'm Interested in machine learning<br>
 •🌱 I'm currently learning generative ai<br>
-•📫 How to reach me: on [Linkedin](https://www.linkedin.com/in/mouad-en-nasiry/)
+•📫 How to reach me: on [Linkedin](https://www.linkedin.com/in/mouad-ennasiry/)
 
 <!--
 **mouadenna/mouadenna** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
