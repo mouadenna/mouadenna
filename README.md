@@ -1,3 +1,6 @@
+![Profile View](https://komarev.com/ghpvc/?username=mouadenna&style=flat-square)
+
+
 ### Hi there 👋
 
 •😄 I'm Mouad<br>
